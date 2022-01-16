@@ -1,6 +1,7 @@
 public abstract class InsuranceStrategy {
     double calculate(double income) {
-        return (income - getAdjustment()) * getWeight() + getConstant();
+        int withinTolerance = incomeWithinTolerance(income) ? 1 : 0; // technically not an if just converts a boolean
+        return withinTolerance * ((income - getAdjustment()) * getWeight() + getConstant());
     }
 
     abstract boolean incomeWithinTolerance(double income);
