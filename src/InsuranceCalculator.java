@@ -9,7 +9,7 @@ public class InsuranceCalculator {
     }
 
     public double calculateInsurance(double income) {
-        InsuranceStrategy selectedStrategy = new InsuranceStrategyLow();
+        InsuranceStrategy selectedStrategy = new InsuranceStrategyVeryHigh();
         for (InsuranceStrategy strategy: strategies) {
             if(strategy.incomeWithinTolerance(income)) {
                 selectedStrategy = strategy;
