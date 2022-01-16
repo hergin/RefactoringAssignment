@@ -1,5 +1,10 @@
 public class InsuranceStrategyMedium extends InsuranceStrategy {
     @Override
+    boolean incomeWithinTolerance(double income) {
+        return income > 10000 && income <= 30000;
+    }
+
+    @Override
     int getConstant() {
         return 35600;
     }

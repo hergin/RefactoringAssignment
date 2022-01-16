@@ -3,6 +3,8 @@ public abstract class InsuranceStrategy {
         return (income - getAdjustment()) * getWeight() + getConstant();
     }
 
+    abstract boolean incomeWithinTolerance(double income);
+
     abstract int getConstant();
 
     abstract double getWeight();

@@ -3,6 +3,11 @@ public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
     }
 
     @Override
+    boolean incomeWithinTolerance(double income) {
+        return income > 60000;
+    }
+
+    @Override
     int getConstant() {
         return 105600;
     }

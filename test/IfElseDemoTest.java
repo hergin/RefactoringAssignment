@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -25,7 +27,12 @@ public class IfElseDemoTest {
     }
 
     private double insuranceFor(double income) {
-        InsuranceCalculator calc = new InsuranceCalculator();
+        InsuranceCalculator calc = new InsuranceCalculator(Arrays.asList(
+                new InsuranceStrategyLow(),
+                new InsuranceStrategyMedium(),
+                new InsuranceStrategyHigh(),
+                new InsuranceStrategyVeryHigh()
+        ));
         return calc.calculateInsurance(income);
     }
 }
