@@ -14,6 +14,7 @@ public class InsuranceStrategyHigh extends InsuranceStrategy {
         public int getAdjustment () {
             return 30000;
         }
+
     }
 
 
