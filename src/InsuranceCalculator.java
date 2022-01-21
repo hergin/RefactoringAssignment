@@ -9,6 +9,7 @@ public class InsuranceCalculator {
     public double calculateInsuranceVeryHigh(double income) {
         return strategy.calculateInsuranceVeryHigh(income);
     }
+
     public int getConstant() {
         return strategy.getConstant();
     }
@@ -16,11 +17,10 @@ public class InsuranceCalculator {
     public double getWeight() {
         return strategy.getWeight();
     }
+
     public int getAdjustment() {
         strategy = new InsuranceStrategyVeryHigh();
         return strategy.getAdjustment();
     }
-
-
 
 }
