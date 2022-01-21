@@ -30,5 +30,6 @@ class InsuranceCalculatorTest {
         return new InsuranceCalculator().calculateInsurance(income);
 
     }
+
 }
 
