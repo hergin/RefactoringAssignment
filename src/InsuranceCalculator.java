@@ -1,23 +1,24 @@
 public class InsuranceCalculator {
 
-    private final InsuranceStrategyVeryHigh insuranceStrategyVeryHigh = new InsuranceStrategyVeryHigh();
+    private InsuranceStrategyVeryHigh strategy;
 
     public double calculateInsurance(double income) {
-        return insuranceStrategyVeryHigh.calculateInsurance(income);
+        return strategy.calculateInsurance(income);
     }
 
     public double calculateInsuranceVeryHigh(double income) {
-        return insuranceStrategyVeryHigh.calculateInsuranceVeryHigh(income);
+        return strategy.calculateInsuranceVeryHigh(income);
     }
     public int getConstant() {
-        return insuranceStrategyVeryHigh.getConstant();
+        return strategy.getConstant();
     }
 
     public double getWeight() {
-        return insuranceStrategyVeryHigh.getWeight();
+        return strategy.getWeight();
     }
     public int getAdjustment() {
-        return insuranceStrategyVeryHigh.getAdjustment();
+        strategy = new InsuranceStrategyVeryHigh();
+        return strategy.getAdjustment();
     }
 
 
