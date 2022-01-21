@@ -1,15 +1,26 @@
 public class InsuranceCalculator {
 
+    private InsuranceStrategyVeryHigh strategy;
+
     public double calculateInsurance(double income) {
-        if (income <= 10000) {
-            return income*0.365;
-        } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
-        } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
-        } else {
-            return (income-60000)*0.02+105600;
-        }
+        return strategy.calculateInsurance(income);
+    }
+
+    public double calculateInsuranceVeryHigh(double income) {
+        return strategy.calculateInsuranceVeryHigh(income);
+    }
+
+    public int getConstant() {
+        return strategy.getConstant();
+    }
+
+    public double getWeight() {
+        return strategy.getWeight();
+    }
+
+    public int getAdjustment() {
+        strategy = new InsuranceStrategyVeryHigh();
+        return strategy.getAdjustment();
     }
 
 }
