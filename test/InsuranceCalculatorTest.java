@@ -1,5 +1,3 @@
-package ifs;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,10 +27,8 @@ class InsuranceCalculatorTest {
     }
 
     private double insuranceFor(double income) {
-        return (new InsuranceCalculatorTest()).calculateInsurance(income); }
+        return new InsuranceCalculator().calculateInsurance(income);
 
-    private double calculateInsurance(double income) {
-        return (new InsuranceCalculatorTest()).calculateInsurance(income);
     }
 }
 
