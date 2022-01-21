@@ -1,14 +1,15 @@
 public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
     public InsuranceStrategyVeryHigh() {
     }
-    int getConstant() {
+
+    public int getConstant() {
         return 105600;
     }
 
-    double getWeight() {
+    public double getWeight() {
         return 0.02;
     }
-    int getAdjustment() {
+    public int getAdjustment() {
         return 60000;
     }
 }
