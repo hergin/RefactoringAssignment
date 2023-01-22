@@ -1,3 +1,4 @@
+//Finished By Joshua Neumann
 public class InsuranceCalculator {
     private InsuranceStrategy strategy;
 
