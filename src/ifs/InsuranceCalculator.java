@@ -2,7 +2,7 @@ package ifs;
 
 public class InsuranceCalculator {
 
-    private final ifs.InsuranceStrategyVeryHigh insuranceStrategyVeryHigh = new ifs.InsuranceStrategyVeryHigh();
+    private ifs.InsuranceStrategyVeryHigh strategy = new ifs.InsuranceStrategyVeryHigh();
 
     public double calculateInsurance(double income) {
 
@@ -14,7 +14,8 @@ public class InsuranceCalculator {
         } else if (income <= 60000) {
             return (income - 30000) * 0.1 + 76500;
         } else {
-            return insuranceStrategyVeryHigh.calculateInsuranceVeryHigh(income);
+            strategy = new InsuranceStrategyVeryHigh();
+            return strategy.calculateInsuranceVeryHigh(income);
         }
 
     }
