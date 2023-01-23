@@ -1,15 +1,24 @@
 public class InsuranceCalculator {
 
-    public double calculateInsurance(double income) {
-        if (income <= 10000) {
-            return income*0.365;
-        } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
-        } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
-        } else {
-            return (income-60000)*0.02+105600;
+    private static InsuranceStrategy strategy;
+
+    public static double calculateInsurance(double income) {
+        switch ((int) income / 10000) {
+            case 0:
+            case 1:
+                strategy = new InsuranceStrategyLow();
+                return strategy.calculate(income);
+            case 2:
+            case 3:
+                strategy = new InsuranceStrategyMedium();
+                return strategy.calculate(income);
+            case 4:
+            case 5:
+                strategy = new InsuranceStrategyHigh();
+                return strategy.calculate(income);
+            default:
+                strategy = new InsuranceStrategyVeryHigh();
+                return strategy.calculate(income);
         }
     }
-
 }
