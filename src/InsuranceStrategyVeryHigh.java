@@ -1,5 +1,5 @@
 public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
-    public InsuranceStrategyVeryHigh() {
+    public InsuranceStrategyVeryHigh(double income) {
     }
 
     @Override
