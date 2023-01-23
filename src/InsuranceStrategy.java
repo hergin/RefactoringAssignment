@@ -1,5 +1,5 @@
 public abstract class InsuranceStrategy {
-    public double calculate(double income) {
+    public double calculateInsuranceVeryHigh(double income) {
         return (income - getAdjustment()) * getWeight() + getConstant();
     }
 
