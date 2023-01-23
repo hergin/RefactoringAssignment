@@ -15,4 +15,5 @@ public class InsuranceStrategyLow extends InsuranceStrategy {
     public int getAdjustment() {
         return 10000;
     }
+//comment so I can commit
 }
