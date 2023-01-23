@@ -1,4 +1,4 @@
-public class InsuranceCalculator {
+public class InsuranceCalculator{
 
     public double calculateInsurance(double income) {
         if (income <= 10000) {
