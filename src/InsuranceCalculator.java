@@ -11,7 +11,7 @@ public class InsuranceCalculator {
             return (income-30000)*0.1+76500;
         } else {
             strategy = new InsuranceStrategyVeryHigh();
-            return strategy.calculateVeryHighInsurance(income);
+            return strategy.calculate(income);
         }
     }
 
