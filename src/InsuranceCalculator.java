@@ -8,8 +8,24 @@ public class InsuranceCalculator {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
-            return (income-60000)*0.02+105600;
+            return getaDouble(income);
         }
+    }
+
+    public static double getaDouble(double income) {
+        return (income - getAdjustment()) * getaDouble() + getAnInt();
+    }
+
+    public static int getAnInt() {
+        return 105600;
+    }
+
+    public static double getaDouble() {
+        return 0.02;
+    }
+
+    public static int getAdjustment() {
+        return 60000;
     }
 
 }
