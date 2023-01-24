@@ -1,16 +1,8 @@
 public abstract class InsuranceStrategy {
     double calculateInsuranceVeryHigh(double income) {
-        return (income - InsuranceStrategy.getAdjustment()) * InsuranceStrategy.getWeight() + InsuranceStrategy.getConstant();
+        return (income - getAdjustment()) * getWeight() + getConstant();
     }
-    static int getConstant() {
-        return 105600;
-    }
-
-    static double getWeight() {
-        return 0.02;
-    }
-
-    static int getAdjustment() {
-        return 60000;
-    }
+    public abstract int getConstant();
+    public abstract double getWeight();
+    public abstract int getAdjustment();
 }
