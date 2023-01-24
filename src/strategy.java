@@ -1,5 +1,5 @@
-public class InsuranceStrategyVeryHigh {
-    public InsuranceStrategyVeryHigh() {
+public class strategy extends InsuranceStrategy {
+    public strategy() {
     }
 
     public double calculateInsurance(double income) {
@@ -18,15 +18,4 @@ public class InsuranceStrategyVeryHigh {
         return (income - getAdjustment()) * getaDouble() + getAnInt();
     }
 
-    public static int getAnInt() {
-        return 105600;
-    }
-
-    public static double getaDouble() {
-        return 0.02;
-    }
-
-    public static int getAdjustment() {
-        return 60000;
-    }
 }

@@ -1,9 +1,11 @@
 public class InsuranceCalculator {
 
-    private final InsuranceStrategyVeryHigh insuranceStrategyVeryHigh = new InsuranceStrategyVeryHigh();
+    private strategy strategy;
+
 
     public double calculateInsurance(double income) {
-        return insuranceStrategyVeryHigh.calculateInsurance(income);
+        strategy = new strategy();
+        return strategy.calculateInsurance(income);
     }
 
 }
