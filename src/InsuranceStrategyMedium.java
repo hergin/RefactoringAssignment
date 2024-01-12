@@ -1,7 +1,7 @@
 public class InsuranceStrategyMedium extends InsuranceStrategy {
     @Override
     public int getConstant() {
-        return 10000;
+        return 35600;
     }
 
     @Override
@@ -11,6 +11,6 @@ public class InsuranceStrategyMedium extends InsuranceStrategy {
 
     @Override
     public int getAdjustment() {
-        return 35600;
+        return 10000;
     }
 }
