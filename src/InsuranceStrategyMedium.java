@@ -1,16 +1,16 @@
 public class InsuranceStrategyMedium extends InsuranceStrategy {
     @Override
     public int getConstant() {
-        return 0;
+        return 38600;
     }
 
     @Override
     public double getWeight() {
-        return 0;
+        return 0.1;
     }
 
     @Override
     public int getAdjustment() {
-        return 0;
+        return 25000;
     }
 }
