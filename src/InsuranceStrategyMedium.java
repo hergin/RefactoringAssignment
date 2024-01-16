@@ -15,4 +15,5 @@ public class InsuranceStrategyMedium extends InsuranceStrategy {
 
         return 10000;
     }
+
 }
