@@ -1,15 +1,30 @@
+import static java.lang.Math.*;
+
 public class InsuranceCalculator {
 
-    public double calculateInsurance(double income) {
-        if (income <= 10000) {
-            return income*0.365;
-        } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
-        } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
-        } else {
-            return (income-60000)*0.02+105600;
-        }
+    private final InsuranceStrategy[] strategies;
+
+    public InsuranceCalculator() {
+        strategies = new InsuranceStrategy[4];
+        strategies[0] = new InsuranceStrategyLow();
+        strategies[1] = new InsuranceStrategyMedium();
+        strategies[2] = new InsuranceStrategyHigh();
+        strategies[3] = new InsuranceStrategyVeryHigh();
     }
 
+    public double calculateInsurance(double income) {
+        return decideStrategy(income).calculate(income);
+    }
+
+    private InsuranceStrategy decideStrategy(double income) {
+        income = max(income, 0);
+        // There are other strategies for this, including signum, abs, etc, but this is probably the cleanest way
+        // to accomplish the mapping.
+        int index = (int)(
+                min(ceil(income/10_000)-1, 1)
+                + min(ceil(income/30_000)-1, 1)
+                + min(ceil(income/60_000)-1, 1)
+        );
+        return strategies[index];
+    }
 }
