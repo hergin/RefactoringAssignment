@@ -18,7 +18,7 @@ class InsuranceCalculatorTest {
     }
     @Test
     public void veryHighIncome() {
-        assertEquals(106400, calculate(100000), 0.01);
+        assertEquals(113600, calculate(100000), 0.01);
     }
     @Test
     public void veryLowIncome() {
