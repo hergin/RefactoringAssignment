@@ -1,4 +1,5 @@
 public class InsuranceCalculator {
+    //All Done!
 
     final InsuranceStrategy[] strategies = {
             new InsuranceStrategyLow(),
