@@ -2,6 +2,9 @@ package ifs;
 
 public class IfElseDemo {
 
+    private InsuranceStrategyVeryHigh strategy;
+
+
     public double calculateInsurance(double income) {
         if (income <= 10000) {
             return income*0.365;
@@ -10,6 +13,7 @@ public class IfElseDemo {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
+            strategy = new InsuranceStrategyVeryHigh();
             return InsuranceStrategyVeryHigh.calculateInsuranceVeryHigh(income);
         }
     }
