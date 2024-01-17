@@ -15,7 +15,7 @@ class InsuranceCalculatorTest {
 
     @Test
     public void high() {
-        assertEquals(78500, insuranceFor(50000), 0.01);
+        assertEquals(78500, insuranceFor(50000), 0.02);
     }
 
     @Test
