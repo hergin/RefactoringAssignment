@@ -1,15 +1,17 @@
-public class InsuranceCalculator {
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
-    public double calculateInsurance(double income) {
-        if (income <= 10000) {
-            return income*0.365;
-        } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
-        } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
-        } else {
-            return (income-60000)*0.02+105600;
-        }
+public class InsuranceCalculator {
+    private final NavigableMap<Double, InsuranceStrategy> strategies = new TreeMap<>();
+
+    public InsuranceCalculator() {
+        strategies.put(0.0, new InsuranceStrategyLow());
+        strategies.put(10000.0, new InsuranceStrategyMedium());
+        strategies.put(30000.0, new InsuranceStrategyHigh());
+        strategies.put(60000.0, new InsuranceStrategyVeryHigh());
     }
 
+    public double calculateInsurance(double income) {
+        return strategies.floorEntry(income).getValue().calculate(income);
+    }
 }
