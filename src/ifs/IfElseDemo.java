@@ -10,8 +10,24 @@ public class IfElseDemo {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
-            return (income-60000)*0.02+105600;
+            return calculateInsuranceVeryHigh(income);
         }
+    }
+
+    public static double calculateInsuranceVeryHigh(double income) {
+        return (income - getAdjustment()) * getWeight() + getConstant();
+    }
+
+    private static int getConstant() {
+        return 105600;
+    }
+
+    public static double getWeight() {
+        return 0.02;
+    }
+
+    public static int getAdjustment() {
+        return 60000;
     }
 
 }
