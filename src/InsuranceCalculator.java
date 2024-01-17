@@ -1,17 +1,20 @@
 public class InsuranceCalculator {
 
-    private InsuranceStrategyHighIncome strategy;
+    private InsuranceStrategy strategy;
 
     public double calculateInsurance(double income) {
         if (income <= 10000) {
-            return income*0.365;
+            strategy = new InsuranceStrategyVeryLowIncome();
+            return strategy.calculate(income);
         } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
+            strategy = new InsuranceStrategyLowIncome();
+            return strategy.calculate(income);
         } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
+            strategy = new InsuranceStrategyMedIncome();
+            return strategy.calculate(income);
         } else {
             strategy = new InsuranceStrategyHighIncome();
-            return strategy.CalculateInsuranceHigh(income);
+            return strategy.calculate(income);
         }
     }
 
