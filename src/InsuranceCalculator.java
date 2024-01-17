@@ -8,24 +8,8 @@ public class InsuranceCalculator {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
-            return CalculateInsuranceHigh(income);
+            return InsuranceStrategyHighIncome.CalculateInsuranceHigh(income);
         }
-    }
-
-    private static double CalculateInsuranceHigh(double income) {
-        return (income - getAdjustment()) * getWeight() + getConstant();
-    }
-
-    private static int getConstant() {
-        return 105600;
-    }
-
-    private static double getWeight() {
-        return 0.02;
-    }
-
-    private static int getAdjustment() {
-        return 60000;
     }
 
 }
