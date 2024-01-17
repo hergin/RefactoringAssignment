@@ -9,24 +9,8 @@ public class InsuranceCalculator {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
-            return calculateInsuranceVeryHigh(income);
+            return InsuranceStrategyVeryHigh.calculateInsuranceVeryHigh(income);
         }
-    }
-
-    private static double calculateInsuranceVeryHigh(double income) {
-        return (income - getConstant()) * getWeight() + getAdjustment();
-    }
-
-    private static int getConstant() {
-        return 60000;
-    }
-
-    private static double getWeight() {
-        return 0.02;
-    }
-
-    private static int getAdjustment() {
-        return 105600;
     }
 
 }
