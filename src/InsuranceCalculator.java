@@ -1,5 +1,7 @@
 public class InsuranceCalculator {
 
+    private InsuranceStrategyHighIncome strategy;
+
     public double calculateInsurance(double income) {
         if (income <= 10000) {
             return income*0.365;
@@ -8,7 +10,8 @@ public class InsuranceCalculator {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
-            return InsuranceStrategyHighIncome.CalculateInsuranceHigh(income);
+            strategy = new InsuranceStrategyHighIncome();
+            return strategy.CalculateInsuranceHigh(income);
         }
     }
 
