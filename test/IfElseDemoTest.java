@@ -6,28 +6,28 @@ public class IfElseDemoTest {
     @Test
 
     public void low() {
-        assertEquals(1825, insuranceFor(5000), 0.01);
+        assertEquals(1825, insuranceFor(5000, new InsuranceStrategyLow()), 0.01);
     }
 
     @Test
 
     public void medium() {
-        assertEquals(38600, insuranceFor(25000), 0.01);
+        assertEquals(38600, insuranceFor(25000, new InsuranceStrategyMedium()), 0.01);
     }
 
     @Test
 
     public void high() {
-        assertEquals(78500, insuranceFor(50000), 0.01);
+        assertEquals(78500, insuranceFor(50000, new InsuranceStrategyHigh()), 0.01);
     }
 
     @Test
 
     public void veryHigh() {
-        assertEquals(106400, insuranceFor(100_000), 0.01);
+        assertEquals(106400, insuranceFor(100_000, new InsuranceStrategyVeryHigh()), 0.01);
     }
 
-    private double insuranceFor(double income){
-        return new InsuranceCalculator().calculateInsurance(income);
+    private double insuranceFor(double income, InsuranceStrategy strat){
+        return new InsuranceCalculator().calculateInsurance(income,strat);
     }
 }
