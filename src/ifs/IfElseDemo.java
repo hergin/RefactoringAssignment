@@ -1,4 +1,6 @@
-public class InsuranceCalculator {
+package ifs;
+
+public class IfElseDemo {
 
     public double calculateInsurance(double income) {
         if (income <= 10000) {
