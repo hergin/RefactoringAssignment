@@ -3,25 +3,12 @@ public class InsuranceCalculator {
     private final InsuranceStrategy[] strategies;
 
     public InsuranceCalculator() {
-        // Initialize the strategies array - Each value in the array should account for a 10k range
-        // Only accounts for incomes up to 150000k inclusive
+        // Initialize the strategies array
         strategies = new InsuranceStrategy[]{
-                new InsuranceStrategyLow(), // <= 10000
-                new InsuranceStrategyMedium(),  // <= 20000
-                new InsuranceStrategyMedium(),  // etc...
+                new InsuranceStrategyLow(),
+                new InsuranceStrategyMedium(),
                 new InsuranceStrategyHigh(),
-                new InsuranceStrategyHigh(),
-                new InsuranceStrategyHigh(),
-                new InsuranceStrategyVeryHigh(),    // <= 70000
-                new InsuranceStrategyVeryHigh(),    // <= 80000
-                new InsuranceStrategyVeryHigh(),    // <= 90000
-                new InsuranceStrategyVeryHigh(),    // <= 100000
-                new InsuranceStrategyVeryHigh(),    // <= 110000
-                new InsuranceStrategyVeryHigh(),    // <= 120000
-                new InsuranceStrategyVeryHigh(),    // <= 130000
-                new InsuranceStrategyVeryHigh(),    // <= 140000
-                new InsuranceStrategyVeryHigh()     // <= 150000
-
+                new InsuranceStrategyVeryHigh()
         };
     }
 
@@ -32,6 +19,27 @@ public class InsuranceCalculator {
     }
 
     private int findStrategyIndex(double income) {
-        return (int) (Math.ceil(income / 10000.0) - 1);
+        // This function maps the given income value to an index value depending on the range the income falls within.
+        // In other words, for each range the given income is greater than, a 1 gets added to the index value.
+        int strategyIndex;
+
+        // These next lines effectively increment the index value when income is greater than the given rangeMax, without actually using any conditional statements
+        strategyIndex = checkIncomeRange(income, 10000);
+        strategyIndex += checkIncomeRange(income, 30000);
+        strategyIndex += checkIncomeRange(income, 60000);
+        return strategyIndex;
+    }
+
+    private int checkIncomeRange(double income, double rangeMax) {
+        // Results in either 0 or a whole number greater than 0.
+        // 0 means the income is less than the current range max, everything else means it is higher.
+        int indexPart = (int) (Math.ceil(income / rangeMax) - 1);
+
+        // Divides the base index by an arbitrary large float number, and takes the ceiling of that.
+        // This ensures any non-zero index will get rounded to 1, while zero remains zero.
+        indexPart = (int) Math.ceil(indexPart / 100000.0);
+
+        // O is returned when income <= rangeMax and 1 is returned if income > rangeMax.
+        return indexPart;
     }
 }
