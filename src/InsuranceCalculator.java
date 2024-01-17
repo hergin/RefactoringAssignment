@@ -1,15 +1,24 @@
+import java.lang.Math;
+
 public class InsuranceCalculator {
 
+    private InsuranceStrategy strategy;
+
     public double calculateInsurance(double income) {
-        if (income <= 10000) {
-            return income*0.365;
-        } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
-        } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
-        } else {
-            return (income-60000)*0.02+105600;
+        InsuranceStrategy[] hashBrown = new InsuranceStrategy[6];
+        hashBrown[0] = new InsuranceStrategyLow();
+        hashBrown[1] = new InsuranceStrategyMedium();
+        hashBrown[2] = new InsuranceStrategyMedium();
+        hashBrown[3] = new InsuranceStrategyHigh();
+        hashBrown[4] = new InsuranceStrategyHigh();
+        hashBrown[5] = new InsuranceStrategyHigh();
+        int deviousNum = (int)Math.floor(Math.abs(income / 10000 - 0.1));
+        try {
+            strategy = hashBrown[deviousNum];
+            return strategy.calculate(income);
+        } catch(ArrayIndexOutOfBoundsException error) {
+            strategy = new InsuranceStrategyVeryHigh();
+            return strategy.calculate(income);
         }
     }
-
 }
