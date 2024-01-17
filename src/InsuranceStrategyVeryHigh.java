@@ -1,17 +1,18 @@
-public class InsuranceStrategyVeryHigh {
-    static double getaDouble(double income) {
-        return (income - getAdjustment()) * getWeight() + getConstant();
-    }
+public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
 
-    static int getConstant() {
+    @Override
+    public int getConstant() {
         return 105600;
     }
 
-    static double getWeight() {
-        return 0.02;
+    @Override
+    public double getWeight() {
+        return 0.2;
     }
 
-    static int getAdjustment() {
+    @Override
+    public int getAdjustment() {
         return 60000;
     }
+
 }
