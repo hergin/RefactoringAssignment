@@ -13,4 +13,14 @@ public class InsuranceStrategyHigh extends InsuranceStrategy {
     int getConstant() {
         return 76500;
     }
+
+    @Override
+    double getMinimum() {
+        return 30000;
+    }
+
+    @Override
+    double getMaximum() {
+        return 60000;
+    }
 }

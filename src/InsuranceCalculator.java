@@ -1,17 +1,18 @@
 public class InsuranceCalculator {
-    InsuranceStrategy strategy;
+    InsuranceStrategy[] strategies = new InsuranceStrategy[]{
+            new InsuranceStrategyLow(),
+            new InsuranceStrategyMedium(),
+            new InsuranceStrategyHigh(),
+            new InsuranceStrategyVeryHigh(),
+    };
 
     public double calculateInsurance(double income) {
-        if (income <= 10000) {
-            strategy = new InsuranceStrategyLow();
-        } else if (income <= 30000) {
-            strategy = new InsuranceStrategyMedium();
-        } else if (income <= 60000) {
-            strategy = new InsuranceStrategyHigh();
-        } else {
-            strategy = new InsuranceStrategyVeryHigh();
+        double result = 0.0;
+
+        for (InsuranceStrategy strategy : strategies) {
+            result += strategy.calculate(income);
         }
 
-        return strategy.calculate(income);
+        return result;
     }
 }

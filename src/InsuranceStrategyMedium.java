@@ -13,4 +13,14 @@ public class InsuranceStrategyMedium extends InsuranceStrategy {
     int getConstant() {
         return 35600;
     }
+
+    @Override
+    double getMinimum() {
+        return 10000;
+    }
+
+    @Override
+    double getMaximum() {
+        return 30000;
+    }
 }
