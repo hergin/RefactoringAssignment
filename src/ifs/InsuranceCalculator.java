@@ -12,7 +12,7 @@ public class InsuranceCalculator {
         } else if (income <= 60000) {
             return (income-30000)*0.1+76500;
         } else {
-            strategy = new InsuranceStrategy();
+            strategy = new InsuranceStrategyVeryHigh();
             return strategy.calculateInsuranceVeryHigh(income);
         }
     }
