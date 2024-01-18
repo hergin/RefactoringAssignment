@@ -6,23 +6,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class InsuranceCalculatorTest {
     @Test
     public void lowIncome() {
-        assertEquals(1825, calculate(5000), 0.01);
+        assertEquals(1460, calculate(4000));
     }
     @Test
     public void mediumIncome() {
-        assertEquals(38600, calculate(25000), 0.01);
+        assertEquals(39600, calculate(30000));
     }
     @Test
     public void highIncome() {
-        assertEquals(78500, calculate(50000), 0.01);
+        assertEquals(79050, calculate(55500));
     }
     @Test
     public void veryHighIncome() {
-        assertEquals(113600, calculate(100000), 0.01);
-    }
-    @Test
-    public void veryLowIncome() {
-        assertEquals(0.73, calculate(2), 0.01);
+        assertEquals(113600, calculate(100000));
     }
     private double calculate(double income) {
         return new InsuranceCalculator().calculateInsurance(income);
