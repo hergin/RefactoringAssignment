@@ -1,18 +1,16 @@
 public class InsuranceStrategyLow extends InsuranceStrategy {
-    public InsuranceStrategyLow() {}
+    public InsuranceStrategyLow() { }
 
     @Override
-    int getConstant() {
-        return 30000;
-    }
+    public int getConstant() { return 30000; }
 
     @Override
-    double getWeight() {
+    public double getWeight() {
         return 0.36;
     }
 
     @Override
-    int getAdjustment() {
+    public int getAdjustment() {
         return 5000;
     }
 }

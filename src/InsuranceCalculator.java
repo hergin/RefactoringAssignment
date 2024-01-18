@@ -1,7 +1,5 @@
 public class InsuranceCalculator {
-
     private InsuranceStrategy strategy;
-
     public double calculateInsurance(double income) {
 
         if (income <= 10000) {
@@ -17,7 +15,7 @@ public class InsuranceCalculator {
             strategy = new InsuranceStrategyVeryHigh();
             return strategy.calculate(income);
         }
-    }
 
+    }
 
 }
