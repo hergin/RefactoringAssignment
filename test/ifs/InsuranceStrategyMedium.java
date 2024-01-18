@@ -3,9 +3,9 @@ package ifs;
 public class InsuranceStrategyMedium extends InsuranceStrategy {
     @Override
     public int getConstant() {
-        return 10000;
+        return 35600;
     }
-//)*+
+//)*+10000)*0.2+35600
     @Override
     public double getWeight() {
         return 0.2;
@@ -13,6 +13,6 @@ public class InsuranceStrategyMedium extends InsuranceStrategy {
 
     @Override
     public int getAdjustment() {
-        return 35600;
+        return 10000;
     }
 }
