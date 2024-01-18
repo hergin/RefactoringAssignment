@@ -2,7 +2,7 @@ package ifs;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class InsuranceCalculatorTest {
+class InsuranceCalculatorTest {
     @Test
     public void low() {
         assertEquals(1825, insuranceFor(5000), 0.01);
