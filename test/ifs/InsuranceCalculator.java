@@ -3,6 +3,7 @@ package ifs;
 public class InsuranceCalculator {
 
     private InsuranceStrategyVeryHigh strategy;
+
     public double calculateInsurance(double income) {
         if (income <= 10000) {
             return income*0.365;
