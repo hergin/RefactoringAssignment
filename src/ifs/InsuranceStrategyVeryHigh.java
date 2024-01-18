@@ -1,13 +1,10 @@
 package ifs;
 
-public class InsuranceStrategyVeryHigh {
+public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
     private final InsuranceCalculator insuranceCalculator;
 
     public InsuranceStrategyVeryHigh(InsuranceCalculator insuranceCalculator) {
         this.insuranceCalculator = insuranceCalculator;
     }
 
-    public double calculateInsuranceVeryHigh(double income) {
-        return (income - insuranceCalculator.getAdjustment()) * insuranceCalculator.getWeight() + insuranceCalculator.getConstant();
-    }
 }
