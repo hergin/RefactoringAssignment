@@ -1,3 +1,4 @@
+package ifs;
 public class InsuranceCalculator {
 
     public double calculateInsurance(double income) {
@@ -11,5 +12,4 @@ public class InsuranceCalculator {
             return (income-60000)*0.02+105600;
         }
     }
-
 }
