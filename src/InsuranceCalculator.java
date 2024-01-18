@@ -17,4 +17,5 @@ public class InsuranceCalculator {
             return strategy.calculateInsurance(income);
         }
     }
+
 }
