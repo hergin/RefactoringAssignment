@@ -4,7 +4,7 @@ public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
     public InsuranceStrategyVeryHigh() {
     }
 
-    public double calculateInsuranceVeryHigh(double income) {
+    public double calculate(double income) {
         return (income - getAdjustment()) * getWeight() + getConstant();
     }
 
