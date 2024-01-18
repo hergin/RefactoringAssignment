@@ -1,10 +1,12 @@
 package ifs;
 
 public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
-    private final InsuranceCalculator insuranceCalculator;
+    @Override
+    public int getConstant() {return 105600;}
 
-    public InsuranceStrategyVeryHigh(InsuranceCalculator insuranceCalculator) {
-        this.insuranceCalculator = insuranceCalculator;
-    }
+    @Override
+    public double getWeight() {return 0.02;}
 
+    @Override
+    public int getAdjustment() {return 60000;}
 }
