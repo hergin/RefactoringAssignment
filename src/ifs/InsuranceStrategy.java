@@ -1,8 +1,8 @@
 package ifs;
 
 public abstract class InsuranceStrategy {
-    public double calculateInsuranceVeryHigh(double income) {
-        return (income - InsuranceStrategy.getAdjustment()) * InsuranceStrategy.getWeight() + InsuranceStrategy.getConstant();
+    public double calculate(double income) {
+        return (income - getAdjustment()) * getWeight() + getConstant();
     }
 
     public abstract int getConstant();
