@@ -3,15 +3,15 @@ public abstract class InsuranceStrategy {
         return (income - InsuranceStrategy.getAdjustment()) * InsuranceStrategy.getWeight() + InsuranceStrategy.getConstant();
     }
 
-    static int getConstant() {
+    public static int getConstant() {
         return 105600;
     }
 
-    static double getWeight() {
+    public static double getWeight() {
         return 0.02;
     }
 
-    static int getAdjustment() {
+    public static int getAdjustment() {
         return 60000;
     }
 }
