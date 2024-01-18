@@ -1,19 +1,19 @@
 package ifs;
 
-public class InsuranceStrategyVeryHigh {
+public class InsuranceStrategyVeryHigh extends InsuranceStrategy{
     public double calculateInsuranceVeryHigh(double income) {
         return (income - getAdjustment()) * getWeight() + getConstant();
     }
-
-    static int getConstant() {
+    @Override
+     public int getConstant() {
         return 105600;
     }
-
-    static double getWeight() {
+    @Override
+    public double getWeight() {
         return 0.02;
     }
-
-    static int getAdjustment() {
+    @Override
+    public int getAdjustment() {
         return 60000;
     }
 }
