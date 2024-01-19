@@ -11,5 +11,6 @@ public class InsuranceCalculator {
             return (income-60000)*0.02+105600;
         }
     }
+    // edit
 
 }
