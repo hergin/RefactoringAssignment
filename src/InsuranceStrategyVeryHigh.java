@@ -1,4 +1,4 @@
-public class InsuranceStrategyVeryHigh {
+public class InsuranceStrategyVeryHigh extends InsuranceStrategy {
     public InsuranceStrategyVeryHigh() {
     }
 
