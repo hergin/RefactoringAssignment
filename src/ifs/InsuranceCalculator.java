@@ -2,17 +2,20 @@ package ifs;
 
 public class InsuranceCalculator {
 
-    InsuranceStrategyVeryHigh strategyVeryHigh;
+    private InsuranceStrategy strategy;
     public double calculateInsurance(double income) {
         if (income <= 10000) {
-            return income*0.365;
+            strategy = new InsuranceStrategyLow();
+            return strategy.calculateInsurance(income);
         } else if (income <= 30000) {
-            return (income-10000)*0.2+35600;
+            strategy = new InsuranceStrategyMedium();
+            return strategy.calculateInsurance(income);
         } else if (income <= 60000) {
-            return (income-30000)*0.1+76500;
+            strategy = new InsuranceStrategyHigh();
+            return strategy.calculateInsurance(income);
         } else {
-            strategyVeryHigh = new InsuranceStrategyVeryHigh();
-            return strategyVeryHigh.calculateInsurance(income);
+            strategy = new InsuranceStrategyVeryHigh();
+            return strategy.calculateInsurance(income);
         }
     }
 }
