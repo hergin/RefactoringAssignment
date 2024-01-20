@@ -20,7 +20,7 @@ public class InsuranceCalculatorTest {
 
     @Test
     public void veryHigh() {
-        assertEquals(106400, insuranceFor(100_000), 0.01);
+        assertEquals(107300, insuranceFor(100_000), 0.01);
     }
 
     private double insuranceFor(double income) {

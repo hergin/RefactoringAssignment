@@ -1,17 +1,11 @@
-public class InsuranceStrategy {
-    public double CalculateInsuranceHigh(double income) {
+public abstract class InsuranceStrategy {
+    public double calculate(double income) {
         return (income - getAdjustment()) * getWeight() + getConstant();
     }
 
-    public int getConstant() {
-        return 105600;
-    }
+    public abstract int getConstant();
 
-    public double getWeight() {
-        return 0.02;
-    }
+    public abstract double getWeight();
 
-    public int getAdjustment() {
-        return 60000;
-    }
+    public abstract int getAdjustment();
 }
